@@ -1,8 +1,3 @@
-{{-- Pterodactyl - Panel --}}
-{{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
-
-{{-- This software is licensed under the terms of the MIT license. --}}
-{{-- https://opensource.org/licenses/MIT --}}
 @extends('layouts.admin')
 
 @section('title')
@@ -10,7 +5,7 @@
 @endsection
 
 @section('content-header')
-    <h1>Administrative Overview<small>A quick glance at your system.</small></h1>
+    <h1>Panel d'administration<small>Gérer le panel en toute simplicité</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li class="active">Index</li>
@@ -32,9 +27,9 @@
             </div>
             <div class="box-body">
                 @if ($version->isLatestPanel())
-                    You are running Pterodactyl Panel version <code>{{ config('app.version') }}</code>. Your panel is up-to-date!
+                    Version du panel <code>{{ config('app.version') }}</code>. Vous êtes à jour!
                 @else
-                    Your panel is <strong>not up-to-date!</strong> The latest version is <a href="https://github.com/Pterodactyl/Panel/releases/v{{ $version->getPanel() }}" target="_blank"><code>{{ $version->getPanel() }}</code></a> and you are currently running version <code>{{ config('app.version') }}</code>.
+                    Votre panel n'est pas <strong>à jour!</strong> La dernière version est <a href="https://github.com/Pterodactyl/Panel/releases/v{{ $version->getPanel() }}" target="_blank"><code>{{ $version->getPanel() }}</code></a> et votre version actuel est <code>{{ config('app.version') }}</code>.
                 @endif
             </div>
         </div>
